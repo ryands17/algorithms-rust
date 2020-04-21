@@ -16,8 +16,9 @@ pub fn call() {
   println!("Integer Reverse: {}", reverse_uint::reverse_int(152));
 
   // max character occurring in a string
-  println!("Max occurring character: {}", max_chars::max_chars("a"));
+  println!("Max occurring character: {}", max_chars::max_chars("a").unwrap());
   println!("Max occurring character: {}", max_chars::max_chars
-    ("abcdefghijklmnaaa"));
-  println!("Max occurring character: {}", max_chars::max_chars("ab1c1d1e1f1g1"));
+    ("abcdefghijklmnaaa").unwrap());
+  println!("Max occurring character: {}", max_chars::max_chars
+    ("ab1c1d1e1f1g1").unwrap());
 }
