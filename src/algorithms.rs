@@ -1,6 +1,7 @@
-pub mod palindrome;
-pub mod reverse_string;
-pub mod reverse_uint;
+mod palindrome;
+mod reverse_string;
+mod reverse_uint;
+mod max_chars;
 
 pub fn call() {
   // reversing a string
@@ -13,4 +14,10 @@ pub fn call() {
   // reverse integers
   println!("Integer Reverse: {}", reverse_uint::reverse_int(5));
   println!("Integer Reverse: {}", reverse_uint::reverse_int(152));
+
+  // max character occurring in a string
+  println!("Max occurring character: {}", max_chars::max_chars("a"));
+  println!("Max occurring character: {}", max_chars::max_chars
+    ("abcdefghijklmnaaa"));
+  println!("Max occurring character: {}", max_chars::max_chars("ab1c1d1e1f1g1"));
 }
