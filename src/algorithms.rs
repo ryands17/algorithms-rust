@@ -1,4 +1,5 @@
 mod anagram;
+mod capitalize;
 mod chunks;
 mod max_chars;
 mod palindrome;
@@ -52,5 +53,18 @@ pub fn call() {
     println!(
         "Are anagrams: {}",
         anagram::is_anagram("A tree, a life, a bench", "A tree, a fence, a yard")
+    );
+
+    // capitalize every word!
+    println!(
+        "Capitalize: {}",
+        capitalize::capitalize_every_word(
+            "hi there, \
+    how is it going?"
+        )
+    );
+    println!(
+        "Capitalize: {}",
+        capitalize::capitalize_every_word("i love breakfast at bill miller bbq")
     );
 }
