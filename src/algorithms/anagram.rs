@@ -22,3 +22,21 @@ pub fn is_anagram(text1: &str, text2: &str) -> bool {
 
   true
 }
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+  #[test]
+  fn is_an_anagram() {
+    assert!(is_anagram("Whoa! Hi!", "Hi! Whoa!"));
+  }
+
+  #[test]
+  fn is_not_an_anagram() {
+    assert!(
+      !is_anagram("A tree, a life, a bench", "A tree, a fence, a yard"),
+      "Shouldn't be anagrams!"
+    );
+  }
+}
