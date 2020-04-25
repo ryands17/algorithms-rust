@@ -18,3 +18,30 @@ pub fn max_chars(str: &str) -> Option<char> {
 
   char
 }
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+  #[test]
+  fn max_single_char() {
+    assert_eq!(
+      max_chars("a").unwrap(),
+      'a',
+      "Should return the single char"
+    );
+  }
+
+  #[test]
+  fn max_char_long_str() {
+    assert_eq!(
+      max_chars(
+        "Lorem \
+    Ipsumissimplydummytextoftheprintingandtypesettingindustry."
+      )
+      .unwrap(),
+      't',
+      "A really long string"
+    );
+  }
+}

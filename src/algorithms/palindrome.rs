@@ -8,9 +8,26 @@ pub fn is_palindrome(string: &str) -> bool {
   };
 
   for i in 0..to_iter {
-    if str_vec.get(i).unwrap() != str_vec.get(vec_len - i - 1).unwrap() {
+    if str_vec.get(i).unwrap().to_ascii_lowercase()
+      != str_vec.get(vec_len - i - 1).unwrap().to_ascii_lowercase()
+    {
       return false;
     }
   }
   true
+}
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+  #[test]
+  fn should_be_palindrome() {
+    assert!(is_palindrome("Malayalam"));
+  }
+
+  #[test]
+  fn should_not_be_palindrome() {
+    assert!(!is_palindrome("TomHanks"));
+  }
 }

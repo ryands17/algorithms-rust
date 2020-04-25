@@ -25,3 +25,20 @@ pub fn chunk_vec(arr: Vec<i32>, size: usize) -> Vec<Vec<i32>> {
 
   chunks
 }
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+  #[test]
+  fn chunk_basic() {
+    let v = vec![vec![1, 2], vec![3, 4], vec![5]];
+    assert_eq!(chunk_vec(vec![1, 2, 3, 4, 5], 2), v);
+  }
+
+  #[test]
+  fn chunk_size_greater_than_vec() {
+    let v = vec![vec![1, 2, 3, 4, 5]];
+    assert_eq!(chunk_vec(vec![1, 2, 3, 4, 5], 6), v);
+  }
+}
