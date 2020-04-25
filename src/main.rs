@@ -1,5 +1,5 @@
 mod algorithms;
 
 fn main() {
-    algorithms::call();
+  algorithms::call();
 }
