@@ -5,6 +5,7 @@ mod max_chars;
 mod palindrome;
 mod reverse_string;
 mod reverse_uint;
+mod vowels;
 
 pub fn call() {
   // reversing a string
@@ -41,5 +42,10 @@ pub fn call() {
   println!(
     "Capitalize: {}\n",
     capitalize::capitalize_every_word("i love breakfast at bill miller bbq")
+  );
+
+  println!(
+    "Vowel count: {}\n",
+    vowels::count_vowels("A simple statement")
   );
 }
