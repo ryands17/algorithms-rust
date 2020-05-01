@@ -5,6 +5,7 @@ mod max_chars;
 mod palindrome;
 mod reverse_string;
 mod reverse_uint;
+mod stack;
 mod vowels;
 
 pub fn call() {
@@ -48,4 +49,12 @@ pub fn call() {
     "Vowel count: {}\n",
     vowels::count_vowels("A simple statement")
   );
+
+  let mut st = stack::Stack::new(21);
+  st.push(30);
+  st.push(45);
+  st.push(56);
+  st.pop();
+  println!("Top value: {}", st.peek().unwrap());
+  println!("Stack length: {}\n", st.len());
 }
