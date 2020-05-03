@@ -1,5 +1,5 @@
-mod algorithms;
+use algorithms_rust::run;
 
 fn main() {
-  algorithms::call();
+  run();
 }

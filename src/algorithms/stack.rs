@@ -1,15 +1,15 @@
-pub struct Stack {
-  top: Option<Box<Node>>,
+pub struct Stack<T> {
+  top: Option<Box<Node<T>>>,
   len: usize,
 }
 
-struct Node {
-  value: i32,
-  next: Option<Box<Node>>,
+struct Node<T> {
+  value: T,
+  next: Option<Box<Node<T>>>,
 }
 
-impl Stack {
-  pub fn new(value: i32) -> Self {
+impl<T> Stack<T> {
+  pub fn new(value: T) -> Self {
     let node = Node { value, next: None };
 
     Stack {
@@ -22,7 +22,7 @@ impl Stack {
     self.len
   }
 
-  pub fn push(&mut self, value: i32) {
+  pub fn push(&mut self, value: T) {
     let node = Node {
       value,
       next: self.top.take(),
@@ -32,7 +32,7 @@ impl Stack {
     self.len += 1;
   }
 
-  pub fn pop(&mut self) -> Option<i32> {
+  pub fn pop(&mut self) -> Option<T> {
     match self.len {
       0 => None,
       _ => self.top.take().map(|node| {
@@ -44,7 +44,7 @@ impl Stack {
     }
   }
 
-  pub fn peek(&mut self) -> Option<i32> {
+  pub fn peek(&mut self) -> Option<T> {
     match self.len {
       0 => None,
       _ => self.top.take().map(|node| (*node).value),
@@ -62,9 +62,10 @@ mod tests {
     s.push(22);
 
     assert_eq!(s.len, 2, "Length should be 2");
-    assert_eq!(s.peek(), Some(22), "Length should be 2");
+    assert_eq!(s.peek().unwrap(), 22, "Top element should be 22");
   }
 
+  #[test]
   pub fn pop_from_stack() {
     let mut s = Stack::new(21);
     s.push(22);
@@ -75,6 +76,6 @@ mod tests {
     s.pop();
 
     assert_eq!(s.len, 4, "Length should be 4");
-    assert_eq!(s.peek(), Some(41), "65 should be popped");
+    assert_eq!(s.peek().unwrap(), 41, "65 should be popped so top => 45");
   }
 }
