@@ -50,6 +50,7 @@ pub fn call() {
     vowels::count_vowels("A simple statement")
   );
 
+  // stack em up
   let mut st = stack::Stack::new(21);
   st.push(30);
   st.push(45);
