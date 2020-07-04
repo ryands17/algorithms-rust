@@ -1,6 +1,7 @@
 mod anagram;
 mod capitalize;
 mod chunks;
+mod matrix;
 mod max_chars;
 mod palindrome;
 mod reverse_string;
@@ -58,4 +59,10 @@ pub fn call() {
   st.pop();
   println!("Top value: {}", st.peek().unwrap());
   println!("Stack length: {}\n", st.len());
+
+  // transposing matrices
+  let m = matrix::transpose(vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]]);
+  println!("Transpose: {:?}", m);
+  let m = matrix::transpose(vec![vec![1, 2, 3, 4], vec![5, 6, 7, 8]]);
+  println!("Transpose: {:?}\n", m);
 }
