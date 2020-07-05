@@ -61,8 +61,10 @@ pub fn call() {
   println!("Stack length: {}\n", st.len());
 
   // transposing matrices
-  let m = matrix::transpose(vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]]);
+  let v = vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]];
+  let m = matrix::transpose(&v);
   println!("Transpose: {:?}", m);
-  let m = matrix::transpose(vec![vec![1, 2, 3, 4], vec![5, 6, 7, 8]]);
+  let v = vec![vec![1, 2, 3, 4], vec![5, 6, 7, 8]];
+  let m = matrix::transpose(&v);
   println!("Transpose: {:?}\n", m);
 }
