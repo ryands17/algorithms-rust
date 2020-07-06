@@ -1,6 +1,7 @@
 mod anagram;
 mod capitalize;
 mod chunks;
+mod collatz;
 mod matrix;
 mod max_chars;
 mod palindrome;
@@ -62,9 +63,15 @@ pub fn call() {
 
   // transposing matrices
   let v = vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]];
-  let m = matrix::transpose(&v);
-  println!("Transpose: {:?}", m);
+  println!("Transpose: {:?}", matrix::transpose(&v));
+
   let v = vec![vec![1, 2, 3, 4], vec![5, 6, 7, 8]];
-  let m = matrix::transpose(&v);
-  println!("Transpose: {:?}\n", m);
+  println!("Transpose: {:?}\n", matrix::transpose(&v));
+
+  // collatz count steps
+  let n = 7;
+  println!("Steps for {}: {}", n, collatz::steps(n));
+
+  let n = 28;
+  println!("Steps for {}: {}\n", n, collatz::steps(n));
 }
