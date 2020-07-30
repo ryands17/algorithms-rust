@@ -8,6 +8,7 @@ mod palindrome;
 mod reverse_string;
 mod reverse_uint;
 mod stack;
+mod sum_of_two;
 mod vowels;
 
 pub fn call() {
@@ -74,4 +75,19 @@ pub fn call() {
 
   let n = 28;
   println!("Steps for {}: {}\n", n, collatz::steps(n));
+
+  // sum of two
+  let vec1 = vec![1, 2, 3];
+  let vec2 = vec![10, 20, 30, 40];
+  println!(
+    "Sum of two exists: {:?}\n",
+    sum_of_two::does_match(&vec1, &vec2, 42)
+  );
+
+  let vec1 = vec![0, 0, -5, 30212];
+  let vec2 = vec![-10, 40, -3, 9];
+  println!(
+    "Sum of two exists: {:?}",
+    sum_of_two::does_match(&vec1, &vec2, -8)
+  );
 }
