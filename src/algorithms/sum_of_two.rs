@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 pub fn does_match(vec1: &Vec<i32>, vec2: &Vec<i32>, sum: i32) -> Option<(i32, i32)> {
-  let mut difference: HashMap<i32, i32> = HashMap::new();
+  let mut difference = HashMap::new();
   for &number in vec1 {
     difference.insert(sum - number, number);
   }
